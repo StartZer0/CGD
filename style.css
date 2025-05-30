@@ -1,0 +1,278 @@
+/* Global Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: sans-serif;
+}
+
+/* App Container */
+#app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Use viewport height */
+}
+
+/* Topic Hierarchy */
+#topic-hierarchy {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    overflow-y: auto; 
+    flex-shrink: 0; 
+    display: flex; 
+    flex-wrap: wrap; 
+}
+
+/* Main Content Area */
+#main-content {
+    display: flex;
+    flex-grow: 1; 
+    overflow: hidden; 
+}
+
+/* Panels */
+.panel {
+    flex-grow: 1;
+    flex-basis: 0; 
+    border: 1px solid #ddd;
+    position: relative; 
+    display: flex; 
+    flex-direction: column; 
+}
+
+#left-panel {
+    border-right: none; 
+}
+
+#right-panel {
+    border-left: none; 
+}
+
+/* Resizer */
+#resizer {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 10px;
+    background-color: #ccc;
+    cursor: col-resize;
+    position: relative; 
+    z-index: 10; 
+}
+
+/* Topic Styling */
+.topic {
+    padding: 8px;
+    margin-top: 5px;
+    background-color: #e9e9e9;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; 
+}
+
+.topic span { 
+    flex-grow: 1; 
+}
+
+.topic-level-0 {
+    background-color: #ddeeff;
+}
+
+.topic-level-1 {
+    background-color: #eeffdd;
+}
+
+.topic-level-2 {
+    background-color: #ffeeff;
+}
+
+.subtopics-container {
+    margin-left: 20px;
+    border-left: 1px dashed #ccc;
+    padding-left: 10px;
+    margin-top: 5px; 
+    width: 100%; 
+    flex-basis: 100%; 
+}
+
+/* Button Styling */
+.add-sub-topic-btn {
+    padding: 3px 6px;
+    font-size: 0.8em;
+    margin-left: 10px; 
+    flex-shrink: 0; 
+}
+
+#add-main-topic-btn {
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px; 
+    margin-right: 10px; 
+}
+
+#add-main-topic-btn:hover {
+    background-color: #45a049;
+}
+
+/* Panel Controls (Common for Left and Right) */
+#left-panel-controls, #right-panel-controls {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    flex-shrink: 0; 
+    align-items: center; 
+}
+
+.panel-content-area {
+    flex-grow: 1; 
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.panel-add-btn {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.panel-add-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Hidden Class */
+.hidden {
+    display: none !important;
+}
+
+/* Toggle Button Styling */
+.app-toggle-btn {
+    margin-left: auto; 
+    padding: 5px 10px;
+    background-color: #17a2b8; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    align-self: center; 
+}
+.app-toggle-btn:hover {
+    background-color: #138496;
+}
+
+.panel-toggle-btn {
+    padding: 5px 8px;
+    font-size: 0.8em;
+    background-color: #6c757d; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: auto; 
+}
+
+.panel-toggle-btn:hover {
+    background-color: #5a6268;
+}
+
+/* Study Material Item Styling */
+.study-material-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    position: relative; 
+    word-wrap: break-word; 
+}
+
+.text-item {
+    white-space: pre-wrap; 
+    line-height: 1.5;
+}
+
+.link-item a {
+    color: #007bff;
+    text-decoration: none;
+    display: inline-block; 
+}
+
+.link-item a:hover {
+    text-decoration: underline;
+}
+
+.link-item a::before {
+    content: '🔗 '; 
+    margin-right: 4px;
+}
+
+/* Visualization Item Styling */
+.visualization-item {
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fdfdfd;
+    position: relative; /* For future controls */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* .html-js-block specific styling - currently covered by .visualization-item */
+
+.code-input {
+    width: 100%;
+    min-height: 120px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em; 
+    resize: vertical;
+    box-sizing: border-box; 
+}
+
+.html-js-block label {
+    font-weight: bold;
+    margin-bottom: -5px; /* Pulls textarea closer to label */
+    display: block;
+}
+
+.render-btn {
+    padding: 8px 15px;
+    background-color: #28a745; /* Green */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.render-btn:hover {
+    background-color: #218838;
+}
+
+.output-frame-container {
+    width: 100%;
+    min-height: 100px;
+    border: 1px dashed #ddd;
+    margin-top: 10px;
+    background-color: white; /* To distinguish from block background */
+}

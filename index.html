@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Learning Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        <div id="topic-hierarchy">
+            <button id="add-main-topic-btn">Add Main Topic</button>
+            <button id="toggle-topics-btn" class="app-toggle-btn">Toggle Topics View</button>
+        </div>
+        <div id="main-content">
+            <div id="left-panel" class="panel">
+                <div id="left-panel-controls">
+                    <button id="add-pdf-btn" class="panel-add-btn">Add PDF</button>
+                    <button id="add-text-btn" class="panel-add-btn">Add Text</button>
+                    <button id="add-link-btn" class="panel-add-btn">Add Link</button>
+                    <button id="toggle-left-panel-btn" class="panel-toggle-btn">Hide</button>
+                </div>
+                <div id="left-panel-content" class="panel-content-area">
+                    <!-- Study materials will be added here -->
+                </div>
+            </div>
+            <div id="resizer"></div>
+            <div id="right-panel" class="panel">
+                <div id="right-panel-controls">
+                    <button id="add-html-js-btn" class="panel-add-btn">Add HTML/JS Block</button>
+                    <button id="toggle-right-panel-btn" class="panel-toggle-btn">Hide</button>
+                </div>
+                <div id="right-panel-content" class="panel-content-area">
+                    <!-- Interactive visualizations will be rendered here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>
